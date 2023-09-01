@@ -99,13 +99,13 @@ function cumleKur(
 
 /* (Oto test yok) cumleKur fonksiyonuna yalnızca 1 parametre göndererek "Hello World!" stringini elde edin, 
 sonucu konsolde gözlemleyin */
-
+var bircumle1 = cumleKur("Hello World!");
 /* (Oto test yok) cumleKur fonksiyonuna yalnızca 2 parametre göndererek "Hello World!" stringini elde edin, 
 sonucu konsolde gözlemleyin */
-
+var bircumle2 = cumleKur("Hello", " ", "World!");
 /* (Oto test var) cumleKur fonksiyonuna 5 parametre göndererek "Ben iyi bir yazılımcı olacağım!" stringini 
 elde edin, sonucu `bircumle` değişkenine atayın ve konsolde gözlemleyin */
-var bircumle;
+var bircumle = cumleKur("Ben", " iyi", " bir", " yazılımcı", " olacağım!");
 
 /* kodlar buraya */
 
@@ -148,7 +148,13 @@ function cumlelereDonustur(cumleler, ayrac = ",") {
 
 function paragrafOlustur(cumleler, cumleKur, cumlelereDonustur) {
   const cumleDizisi = cumlelereDonustur(cumleler);
-  const paragraf = cumleKur(...cumleDizisi.slice(1, 10), "");
+  const paragraf = cumleKur(
+    cumleDizisi[1],
+    cumleDizisi[3],
+    cumleDizisi[5],
+    cumleDizisi[7],
+    cumleDizisi[9]
+  );
   return paragraf;
 }
 
@@ -197,8 +203,13 @@ var manav;
 			4. elde edilen string döndürülecek
  */
 
-function emojileriDonustur(/* kodlar buraya */) {
-  /* kodlar buraya */
+function emojileriDonustur(mesaj, emojiler) {
+  for (const sembol in emojiler) {
+    const emoji = emojiler[sembol];
+    mesaj = mesaj.replaceAll(sembol.toLowerCase(), emoji);
+    mesaj = mesaj.replaceAll(sembol.toUpperCase(), emoji);
+  }
+  return mesaj;
 }
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
