@@ -128,8 +128,9 @@ var bircumle;
 			5. Oluşturulan yeni dizi döndürülecek.
 	*/
 
-function cumlelereDonustur(/* kodlar buraya */) {
-  /* kodlar buraya */
+function cumlelereDonustur(cumleler, ayrac = ",") {
+  const yeniCumleler = cumleler.map((cumle) => cumle.join(ayrac));
+  return yeniCumleler;
 }
 
 /* GÖREV 2:
