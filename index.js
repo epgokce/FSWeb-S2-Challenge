@@ -146,8 +146,10 @@ function cumlelereDonustur(cumleler, ayrac = ",") {
 			6. Oluşturulan paragraf döndürülecek
 	*/
 
-function paragrafOlustur(/* kodlar buraya */) {
-  /* kodlar buraya */
+function paragrafOlustur(cumleler, cumleKur, cumlelereDonustur) {
+  const cumleDizisi = cumlelereDonustur(cumleler);
+  const paragraf = cumleKur(...cumleDizisi.slice(1, 10), "");
+  return paragraf;
 }
 
 /* 	GÖREV 3:
@@ -156,6 +158,8 @@ function paragrafOlustur(/* kodlar buraya */) {
  */
 //3a çözümü
 /* kodlar buraya */
+meyveler.pop(); // Son meyveyi çıkart
+meyveler.shift(); // İlk meyveyi çıkart
 
 /* 			3b.  Bir tavşan ve bir kirpi arkadaşlar sebzeler dizimizin peşine düştü. Tavşan => 🐇 , Kirpi=> 🦔 , 
 Tavşanla kirpi sebzeleri ele geçirmek için bir plan kurdular. Tavşan diziye önden saldıracak, kirpi ise 
@@ -164,12 +168,15 @@ Kirpiyi dizinin son elemanına ekleyin 🦔
  */
 //3b çözümü
 /* kodlar buraya */
+sebzeler.unshift("🐇"); // Tavşanı önden ekle
+sebzeler.push("🦔"); // Kirpiyi arkadan ekle
 
 /* 			3c. manav isminde bir dizi oluşturun.`meyveler` dizisi ilk elemanlara, `sebzeler` dizisi son 
 elemanlara denk gelecek şekilde, iki diziyi birleştirip sonucu manav dizisine aktarın. (.concat metodu)
  */
 //3c çözümü
 /* kodlar buraya */
+manav = meyveler.concat(sebzeler);
 
 var manav;
 
